@@ -26,7 +26,8 @@
 - Output: All pages built — login, onboarding, home (trip planning), trips list, trip detail, profile
 
 ### Phase 6: QA & Polish
-- Status: not_started
+- Status: complete
+- Output: 9 issues found and fixed — ESLint clean, build clean, a11y improvements, error boundary, middleware deprecation resolved. See docs/QA_REPORT.md
 
 ### Phase 7: Deployment
 - Status: not_started

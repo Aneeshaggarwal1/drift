@@ -34,6 +34,7 @@ export default function Modal({ open, onClose, title, children, className, fullS
       className="fixed inset-0 z-50 flex items-end sm:items-center justify-center"
       role="dialog"
       aria-modal="true"
+      aria-labelledby={title ? 'modal-title' : undefined}
     >
       {/* Backdrop */}
       <div
@@ -53,7 +54,7 @@ export default function Modal({ open, onClose, title, children, className, fullS
       >
         {title && (
           <div className="flex items-center justify-between px-5 py-4 border-b border-[#2A2A2A]">
-            <h2 className="text-[#F5F0E8] font-semibold text-sm">{title}</h2>
+            <h2 id="modal-title" className="text-[#F5F0E8] font-semibold text-sm">{title}</h2>
             <button
               onClick={onClose}
               className="text-[#A09A90] hover:text-[#F5F0E8] transition-colors p-1"

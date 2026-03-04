@@ -8,7 +8,6 @@ import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import Modal from '@/components/ui/Modal';
 import ChatInterface from '@/components/chat/ChatInterface';
-import { updateProfile } from '@/lib/api/client';
 import { formatINR } from '@/lib/utils/budget';
 import type { TravelerProfile } from '@/lib/types';
 

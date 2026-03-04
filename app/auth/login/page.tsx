@@ -44,8 +44,9 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-[#A09A90] text-xs mb-1.5">Email address</label>
+              <label htmlFor="email" className="block text-[#A09A90] text-xs mb-1.5">Email address</label>
               <input
+                id="email"
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}

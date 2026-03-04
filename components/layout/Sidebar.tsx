@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils/cn';
 import type { Trip } from '@/lib/types';
 
@@ -12,6 +12,15 @@ interface SidebarProps {
 
 export default function Sidebar({ recentTrips = [], onNewTrip }: SidebarProps) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  function handleNewTrip() {
+    if (onNewTrip) {
+      onNewTrip();
+    } else {
+      router.push('/');
+    }
+  }
 
   return (
     <aside className="w-[240px] h-full bg-[#0F0F0F] border-r border-[#2A2A2A] flex flex-col py-5 px-4 shrink-0">
@@ -24,7 +33,7 @@ export default function Sidebar({ recentTrips = [], onNewTrip }: SidebarProps) {
 
       {/* New Trip */}
       <button
-        onClick={onNewTrip}
+        onClick={handleNewTrip}
         className="w-full flex items-center gap-2 bg-[#E8A838] text-[#0F0F0F] rounded-xl px-4 py-2.5 text-sm font-semibold hover:bg-[#d4972e] transition-colors mb-5"
       >
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
